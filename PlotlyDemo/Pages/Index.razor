@@ -1,0 +1,17 @@
+﻿@page "/"
+@inject IJSRuntime JSRuntime;
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<div id="tester" style="width:600px;height:250px;"></div>
+<button @onclick="Show"> click </button>
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+@code{
+    private async Task Show()
+    {
+        await JSRuntime.InvokeVoidAsync("plottester");
+    }
+}
