@@ -12,6 +12,8 @@ Welcome to your new app.
 @code{
     private async Task Show()
     {
-        await JSRuntime.InvokeVoidAsync("plottester");
+        var data1 = new List<int>() { 1, 2, 3, 4, 5 };
+        var data2 = new List<int>() { 1, 2, 4, 8, 16 };
+        await JSRuntime.InvokeVoidAsync("plottester", data1, data2);
     }
 }
